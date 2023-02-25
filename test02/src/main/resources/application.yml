@@ -1,0 +1,8 @@
+# configuracion que alterara el comportamiento de la aplicacion
+logging:
+    level:
+        # significa que desde debug hacia arriba estara habilitado en los logs
+        com.test02.test02: DEBUG
+
+# esto sirve para mostrar la razon en los status code
+server.error.include-message : always
