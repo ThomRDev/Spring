@@ -10,3 +10,6 @@ public interface ProductService {
 
     ProductsResponse _getProducts();
 }
+
+
+// toda la logica de negocio debe de ir en la capa de servicio

@@ -16,10 +16,10 @@ import java.util.List;
 @RequestMapping("/api/v1/products")
 public class RestProductController {
 
-
     @Autowired
-    private ProductService productService;
-
+    private ProductService productService; // ira al contenedor de objetos de spring, buscara una implementacion que tenga prodtSerice
+    // si esa interfaz tiene mas de una implementacion enviara un error y le podemos recir que nos de uno en concreto con el nombre del service("blalb")
+    // @Qualifier("myServiceImpl1")
     @GetMapping("products-v1")
     public ResponseEntity<List<ProductDto>> getProducts(){
         //return ResponseEntity.ok(this.productService.getProducts());
