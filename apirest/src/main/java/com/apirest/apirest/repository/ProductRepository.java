@@ -3,7 +3,7 @@ import com.apirest.apirest.domain.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 @Repository("productRepository")
-public interface ProductRepository extends JpaRepository<Product, Integer> {
+public interface ProductRepository extends JpaRepository<Product, Integer> { // Integer seria el identificador de la tabla Product
 
 }
 

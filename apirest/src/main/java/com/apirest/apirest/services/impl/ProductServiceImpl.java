@@ -33,5 +33,11 @@ public class ProductServiceImpl implements ProductService {
         return new ProductsResponse(this.productRepository.findAll());
     }
 
+    @Override
+    public ProductDto getProduct(Integer productId) {
+        var product = productRepository.findById(productId).orElse( new Product());
+        return new ProductDto(product);
+    }
+
 
 }

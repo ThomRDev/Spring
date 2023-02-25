@@ -9,6 +9,8 @@ public interface ProductService {
     List<ProductDto> getProducts();
 
     ProductsResponse _getProducts();
+
+    ProductDto getProduct(Integer productId);
 }
 
 
