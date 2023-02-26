@@ -42,4 +42,19 @@ public class RestStudentController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }
+
+    @DeleteMapping(path = "{id}")
+    public void deleteStudent(@PathVariable("id") Long id){
+        this.studentService.deleteStudent(id);
+    }
+
+    @PutMapping(path = "{id}")
+    //public void updateStudent(@PathVariable("id") Long id,@RequestBody body){
+    public void updateStudent(
+            @PathVariable("id") Long id,
+            @RequestParam(required = false) String name, // ?name
+            @RequestParam(required = false) String email // ?email
+    ){
+        this.studentService.updateStudent(id,name,email);
+    }
 }
