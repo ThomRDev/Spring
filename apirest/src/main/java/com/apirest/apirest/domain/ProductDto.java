@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@JsonInclude(JsonInclude.Include.NON_NULL) // permite establecer en null a las variables en el json
+@JsonInclude(JsonInclude.Include.NON_NULL) // si tiene valores en null no se mandaran
 @NoArgsConstructor
 public class ProductDto {
     private Integer id;
