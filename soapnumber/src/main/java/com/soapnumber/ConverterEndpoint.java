@@ -17,7 +17,7 @@ public class ConverterEndpoint {
 
     @PayloadRoot(localPart = "BinaryConversionRequest", namespace = NAMESPACE)
     @ResponsePayload
-    public BinaryConversionResponse getBirthdayRequest(@RequestPayload BinaryConversionRequest request) {
+    public BinaryConversionResponse binaryConversionResponse(@RequestPayload BinaryConversionRequest request) {
         return service.binary(request);
     }
 }
