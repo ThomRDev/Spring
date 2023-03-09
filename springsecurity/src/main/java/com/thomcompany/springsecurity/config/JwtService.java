@@ -15,7 +15,13 @@ import java.util.function.Function;
 
 @Service
 public class JwtService {
-    private static final String SECRET_KEY = "secret";
+
+    // maximo 250 caracteres
+//    puedo usar esta pero no es segura
+//    private static final String SECRET_KEY = "secret";
+
+//    https://www.allkeysgenerator.com/Random/Security-Encryption-Key-Generator.aspx
+    private static final String SECRET_KEY = "3273357638782F413F4428472B4B6250655368566D597133743677397A244226";
 
     // devuelve la llave con la cual podre ver mi jwt
     private Key getSignInKey() {
