@@ -15,11 +15,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-@RequiredArgsConstructor
 public class ApplicationConfig {
 
     @Autowired
-    private final UserRepository userRepository;
+    private UserRepository userRepository;
 
 
     // este bean me servira para reemplazar la que ya viene por defecto de spring

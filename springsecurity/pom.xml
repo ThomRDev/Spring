@@ -40,38 +40,21 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
-
-<!--        Es la API de la biblioteca jjwt, que proporciona las interfaces para crear y
- validar tokens JWT. No tiene implementaciones concretas, por lo que no se puede usar por
- sí sola. Esta dependencia es necesaria si deseas utilizar jjwt en tu aplicación.-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-api</artifactId>
             <version>0.11.5</version>
         </dependency>
-
-<!--        Esta dependencia contiene la implementación concreta de la biblioteca jjwt.
-Contiene las clases concretas que se utilizan para crear y validar tokens JWT. Esta dependencia es necesaria para utilizar jjwt en tu aplicación.-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-impl</artifactId>
             <version>0.11.5</version>
         </dependency>
-
-<!--        Esta dependencia proporciona la integración con la biblioteca Jackson,
-que es una biblioteca de serialización y deserialización de JSON. Con esta dependencia,
- puedes usar objetos de jjwt directamente con Jackson, lo que simplifica la serialización y
-  deserialización de tokens JWT. Esta dependencia es opcional, pero útil si trabajas con objetos JSON en tu aplicación.-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-jackson</artifactId>
             <version>0.11.5</version>
         </dependency>
-
-<!--        En resumen, jjwt-api y jjwt-impl son necesarias para utilizar la biblioteca jjwt, mientras que jjwt-jackson
-es opcional pero útil si trabajas con objetos JSON en tu aplicación.-->
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

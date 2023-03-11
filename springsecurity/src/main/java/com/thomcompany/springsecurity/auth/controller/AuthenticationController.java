@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/auth")
-@RequiredArgsConstructor
 public class AuthenticationController {
     @Autowired
-    private final AuthenticationService service;
+    private AuthenticationService service;
 
     @PostMapping("/register")
     public ResponseEntity<AuthResponseDto> register(

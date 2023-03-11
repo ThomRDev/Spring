@@ -22,12 +22,20 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "_user")
+@Table(name = "_users")
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue
-    private Integer id;
+    @SequenceGenerator(
+            name = "_users_sequence",
+            sequenceName = "_users_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "_users_sequence"
+    )
+    private Long id;
     private String firstname;
     private String lastname;
     private String email;
