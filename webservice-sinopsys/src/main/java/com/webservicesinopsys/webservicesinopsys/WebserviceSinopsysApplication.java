@@ -20,7 +20,7 @@ public class WebserviceSinopsysApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WebserviceSinopsysApplication.class, args);
 	}
-
+//
 	@GetMapping("/rnd")
 	public ResponseEntity<Map<String,Object>> generateRndNumber() {
 		Random rnd = new Random();
