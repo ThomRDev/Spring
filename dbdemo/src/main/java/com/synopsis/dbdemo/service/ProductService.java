@@ -13,4 +13,8 @@ public interface ProductService {
 	Product getByName(String name);
 
 	void createProduct(ProductDto productDto);
+
+	Product update(ProductDto productDto,Long id);
+
+	void deleteProductById(Long id);
 }
