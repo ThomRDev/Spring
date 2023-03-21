@@ -1,0 +1,29 @@
+version: "3"
+services:
+  mysql-db:
+    image: mariadb:jammy
+    environment:
+      - MARIADB_USER=thom
+      - MARIADB_PASSWORD=123456
+      - MARIADB_ROOT_PASSWORD=123456 # root
+      - MARIADB_DATABASE=ecommercedb
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-volume:/var/lib/mysql
+    networks:
+      - ecommerce-webservice
+  phpmyadmin:
+    image: phpmyadmin:5.2.0-apache
+    environment:
+      - PMA_ARBITRARY=1
+    ports:
+      - "8181:80"
+    networks:
+      - ecommerce-webservice
+volumes:
+  db-volume:
+    external: false
+networks:
+  ecommerce-webservice:
+    driver: bridge
