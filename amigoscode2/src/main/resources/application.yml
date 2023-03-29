@@ -1,0 +1,12 @@
+server:
+    port: 8181
+
+spring:
+    main:
+      # configuracion para que no exista ningun web server, corre y luego muere
+      # web-application-type: none
+
+      # esta propiedad esta por defecto, queda ensendido
+      web-application-type: servlet
+      # para incluir otro servidor que no sea tomcat, suno jetty etc hay que configurarlo en el pom.xml
+      # https://docs.spring.io/spring-boot/docs/2.1.9.RELEASE/reference/html/howto-embedded-web-servers.html

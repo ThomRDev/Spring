@@ -1,0 +1,29 @@
+version: "3"
+services:
+  mysql-db:
+    image: mariadb:jammy
+    environment:
+      - MARIADB_USER=thom
+      - MARIADB_PASSWORD=123456
+      - MARIADB_ROOT_PASSWORD=123456 # root
+      - MARIADB_DATABASE=soapdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-volume:/var/lib/mysql
+    networks:
+      - soap-webservice
+  phpmyadmin:
+    image: phpmyadmin:5.2.0-apache
+    environment:
+      - PMA_ARBITRARY=1
+    ports:
+      - "8080:80"
+    networks:
+      - soap-webservice
+volumes:
+  db-volume:
+    external: false
+networks:
+  soap-webservice:
+    driver: bridge

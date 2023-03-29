@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,10 +17,10 @@ import java.util.List;
 @RequestMapping("/api/v1/products")
 public class RestProductController {
 
-
     @Autowired
-    private ProductService productService;
-
+    private ProductService productService; // ira al contenedor de objetos de spring, buscara una implementacion que tenga prodtSerice
+    // si esa interfaz tiene mas de una implementacion enviara un error y le podemos recir que nos de uno en concreto con el nombre del service("blalb")
+    // @Qualifier("myServiceImpl1")
     @GetMapping("products-v1")
     public ResponseEntity<List<ProductDto>> getProducts(){
         //return ResponseEntity.ok(this.productService.getProducts());
@@ -39,5 +40,12 @@ public class RestProductController {
                 .body(this.productService._getProducts());
     }
 
+    @GetMapping("{id}")
+    public ResponseEntity<ProductDto> getProduct(@PathVariable Integer id){
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .header("Content-Type","application/json")
+                .body(this.productService.getProduct(id));
+    }
 
 }
